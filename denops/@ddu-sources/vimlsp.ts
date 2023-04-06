@@ -20,7 +20,7 @@ import { type Denops, fn } from "https://deno.land/x/ddu_vim@v2.7.0/deps.ts";
 import type { Item } from "https://deno.land/x/ddu_vim@v2.7.0/types.ts";
 import { ActionData } from "https://deno.land/x/ddu_kind_file@v0.3.2/file.ts";
 import { defer } from "https://deno.land/x/denops_defer@v0.6.0/batch/defer.ts";
-import * as lambda from "https://deno.land/x/denops_std@v4.1.0/lambda/mod.ts";
+import * as lambda from "https://deno.land/x/denops_std@v4.1.1/lambda/mod.ts";
 
 import { safeEcho } from "../ddu-source-vimlsp/echo.ts";
 import { getByteLength } from "../ddu-source-vimlsp/encode.ts";
