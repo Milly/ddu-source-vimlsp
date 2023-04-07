@@ -26,14 +26,13 @@ import { safeEcho } from "../ddu-source-vimlsp/echo.ts";
 import { getByteLength } from "../ddu-source-vimlsp/encode.ts";
 import * as lsp from "../ddu-source-vimlsp/lsp.ts";
 import {
-  assertIt,
+  assertParameter,
   ensureArray,
   ensureIt,
   ensureObject,
   isNumber,
   isObject,
   isString,
-  type Predicate,
 } from "../ddu-source-vimlsp/unknownutil.ts";
 
 const DEFAULT_TIMEOUT = 10_000; // [msec]
@@ -397,13 +396,4 @@ export class Source extends BaseSource<Params> {
     const formatted = `[${this.name}]: ${message}`;
     safeEcho(denops ?? this.#initialized.denops, formatted, { error: true });
   }
-}
-
-function assertParameter<T>(
-  name: string,
-  value: unknown,
-  pred: Predicate<T>,
-): asserts value is T {
-  const message = `Invalid parameter: ${name}: ${JSON.stringify(value)}`;
-  assertIt(value, pred, message);
 }

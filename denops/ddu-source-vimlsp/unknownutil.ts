@@ -28,3 +28,12 @@ export function ensureIt<T>(
 export function maybeIt<T>(x: unknown, pred: Predicate<T>): T | undefined {
   return pred(x) ? x : void 0;
 }
+
+export function assertParameter<T>(
+  name: string,
+  value: unknown,
+  pred: Predicate<T>,
+): asserts value is T {
+  const message = `Invalid parameter: ${name}: ${JSON.stringify(value)}`;
+  assertIt(value, pred, message);
+}
