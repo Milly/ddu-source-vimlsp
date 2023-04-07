@@ -313,7 +313,7 @@ export class Source extends BaseSource<Params> {
           return {
             word: `${relativePath}|${pos}|${text}`,
             action: {
-              bufNr: bufNr < 0 ? undefined : bufNr,
+              ...(bufNr <= 0 ? {} : { bufNr }),
               path,
               lineNr,
               col,
