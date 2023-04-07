@@ -1,6 +1,6 @@
 import { echo } from "https://deno.land/x/denops_std@v4.1.1/helper/mod.ts";
 import type { Denops } from "https://deno.land/x/denops_std@v4.1.1/mod.ts";
-import { echowindow } from "https://deno.land/x/denops_backport@v2.0.0/mod.ts";
+import { echowindow } from "https://deno.land/x/denops_backport@v2.0.1/mod.ts";
 
 export const safeEcho = async (
   denops: Denops,
